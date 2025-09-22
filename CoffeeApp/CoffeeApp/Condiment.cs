@@ -1,0 +1,65 @@
+﻿namespace CoffeeApp
+{
+    public abstract class Condiment
+    {
+        protected Condiment()
+        {
+
+        }
+
+        public abstract string Make();
+        public abstract decimal Price { get; }
+    }
+
+    public class Milk : Condiment
+    {
+        public int Quantity { get; set; }
+        public Milk(int q = 1) : base()
+        {
+            Quantity = q;
+        }
+
+        public override string Make()
+        {
+            return " + milk";
+        }
+
+        public override decimal Price
+        {
+            get => 0.50m;
+        }
+    }
+
+    public class Cacao : Condiment
+    {
+        
+        public override string Make()
+        {
+            return " + cacao";
+        }
+
+        public override decimal Price
+        {
+            get => 0.25m;
+        }
+    }
+
+    public enum SyrupType { Caramel, Chocolate, Hazelnut }
+    public class Syrup : Condiment
+    {
+        private SyrupType _syrupType;
+        public Syrup(SyrupType type) : base()
+        {
+            _syrupType = type;
+        }
+        public override string Make()
+        {
+            return $"{_syrupType} syrup ";
+        }
+
+        public override decimal Price
+        {
+            get => 0.55m;
+        }
+    }
+}
