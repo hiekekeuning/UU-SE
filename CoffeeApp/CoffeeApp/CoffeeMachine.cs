@@ -1,7 +1,7 @@
 ﻿
 namespace CoffeeApp
 {
-    /* Not so optimal implemntation of a coffee machine */
+    /* Not so optimal implementation of a coffee machine */
 
     public enum CoffeeMakerState { Ready, Brewing, CleanReservoir, Descale, Completed, Error }
     public class CoffeeMaker
